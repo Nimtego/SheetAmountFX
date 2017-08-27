@@ -1,4 +1,4 @@
-package com.fred.entity;
+package com.fred.service;
 
 import ru.reeson2003.persist_user.api.service.UserService;
 import ru.reeson2003.persist_user.api.service.UserServices;

@@ -1,6 +1,6 @@
 package com.fred.view;
 
-import com.fred.entity.UserController;
+import com.fred.service.UserController;
 import com.fred.exception.ErrorMessageException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,32 +56,22 @@ public class MainWindowController {
             try {
                 if (userController.singUpUser(logIn, password)) {
                     labelMain.setText(logIn);
-                    setLoginFormVisible(false);
-                    moveMenu(true);
                 }
 
             } catch (ErrorMessageException | UserPersistException e) {
                 alert(e.getMessage());
             }
-
         }
         if (logIn.isArmed()) {
             String logIn = fieldLogIn.getText();
             String password = fieldPassword.getText();
             try {
-                if (userController.logInUser(logIn, password) != null) {
-                    labelMain.setText(logIn);
-                    setLoginFormVisible(false);
-                    moveMenu(true);
-                }
-                else
-                    alert("Log in or password is wrong");
+                userController.logInUser(logIn, password);
+                labelMain.setText(logIn);
             }
-            catch (ErrorMessageException | UserPersistException e) {
+            catch (ErrorMessageException  | UserPersistException e) {
                 alert(e.getMessage());
             }
-
-
         }
         if (buttonSheetAmount.isArmed()) {
             if (emptyRightPanel.isVisible()) {

@@ -1,7 +1,7 @@
 package com.fred.controller;
 
-import com.fred.entity.UserController;
-import com.fred.entity.UserServicesStandard;
+import com.fred.service.UserController;
+import com.fred.service.UserServicesStandard;
 import com.fred.mock.MockUserService;
 import com.fred.view.MainWindow;
 
