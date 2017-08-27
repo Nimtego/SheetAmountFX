@@ -11,7 +11,7 @@ import ru.reeson2003.persist_user.api.service.UserServices;
  * on 25.08.2017.
  */
 public class UserController {
-    public User current;
+    private User current;
 
     public void logInUser(String logIn, String password) throws ErrorMessageException, UserPersistException {
         if (logIn.isEmpty() || password.isEmpty()) {
@@ -34,5 +34,13 @@ public class UserController {
         UserServices.getService().addUser(user);
 
         return true;
+    }
+
+    public User getCurrent() {
+        return current;
+    }
+
+    public void setCurrent(User current) {
+        this.current = current;
     }
 }

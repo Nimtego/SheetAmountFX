@@ -37,8 +37,7 @@ public class MainWindowController {
 
     @FXML
     private void initialize() {
-        fieldLogIn.setStyle("-fx-control-inner-background: #3D4956");
-        fieldPassword.setStyle("-fx-control-inner-background: #3D4956");
+        fieldLogIn.setStyle("-fx-text-inner-color: red;");
         this.userController = new UserController();
     }
 
@@ -55,7 +54,7 @@ public class MainWindowController {
             String password = fieldPassword.getText();
             try {
                 if (userController.singUpUser(logIn, password)) {
-                    labelMain.setText(logIn);
+                    labelMain.setText(userController.getCurrent().getLogin());
                 }
 
             } catch (ErrorMessageException | UserPersistException e) {
@@ -67,7 +66,7 @@ public class MainWindowController {
             String password = fieldPassword.getText();
             try {
                 userController.logInUser(logIn, password);
-                labelMain.setText(logIn);
+                labelMain.setText(userController.getCurrent().getLogin());
             }
             catch (ErrorMessageException  | UserPersistException e) {
                 alert(e.getMessage());
