@@ -37,7 +37,7 @@ public class MainWindowController {
 
     @FXML
     private void initialize() {
-        fieldLogIn.setStyle("-fx-text-inner-color: red;");
+        //fieldLogIn.setStyle("-fx-text-inner-color: red;");
         this.userController = new UserController();
     }
 
@@ -117,6 +117,15 @@ public class MainWindowController {
             ((Button) mouseEvent.getSource()).setTextFill(Color.SKYBLUE);
         if (mouseEvent.getSource() instanceof Label)
             ((Label) mouseEvent.getSource()).setTextFill(Color.SKYBLUE);
+        if (mouseEvent.getSource() instanceof TextField||
+                mouseEvent.getSource() instanceof ComboBox) {
+            if (mouseEvent.getSource() instanceof TextField) {
+                ((TextField) mouseEvent.getSource()).setStyle("-fx-background-color: #b2ffe5;");
+            }
+            else {
+                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-background-color: #b2ffe5;");
+            }
+        }
     }
 
     public void mouseReMoved(MouseEvent mouseEvent) {
@@ -124,8 +133,17 @@ public class MainWindowController {
             ((Button) mouseEvent.getSource()).setTextFill(Color.BLACK);
         if (mouseEvent.getSource() instanceof Label)
             ((Label) mouseEvent.getSource()).setTextFill(color);
-        if (mouseEvent.getSource() instanceof TextField)
-            ((TextField) mouseEvent.getSource()).setText("GGGGG");
+        if (mouseEvent.getSource() instanceof TextField ||
+                mouseEvent.getSource() instanceof ComboBox) {
+            if (mouseEvent.getSource() instanceof TextField) {
+                ((TextField) mouseEvent.getSource()).setStyle("-fx-border-color:    #bedfe4;");
+                ((TextField) mouseEvent.getSource()).setStyle("-fx-background-color:  #3D4956;");
+            }
+            else {
+                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-border-color:    #bedfe4;");
+                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-background-color:  #3D4956;");
+            }
+        }
     }
 
     public void actionLabel(MouseEvent mouseEvent) {
