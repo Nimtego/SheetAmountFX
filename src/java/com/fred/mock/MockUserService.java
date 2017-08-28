@@ -24,14 +24,14 @@ public class MockUserService implements UserService {
     public void addUser(User user) throws UserPersistException {
         try {
             findByLogin(user.getLogin());
-            throw new UserPersistException("Логин уже существует");
+            throw new UserPersistException();
         } catch (UserPersistException e) {
             if (user.getId() == 0) {
                 user.setId(idGenerator++);
                 userMap.put(user.getId(), user);
 
             } else
-                throw new UserPersistException("");
+                throw new UserPersistException();
         }
     }
 
@@ -40,7 +40,7 @@ public class MockUserService implements UserService {
         if (userMap.containsKey(userId))
             return userMap.get(userId);
         else
-            throw new UserPersistException("Test get");
+            throw new UserPersistException();
     }
 
     @Override
@@ -48,7 +48,7 @@ public class MockUserService implements UserService {
         if (userMap.containsKey(user.getId()))
             userMap.put(user.getId(), user);
         else
-            throw new UserPersistException("Test upDate");
+            throw new UserPersistException();
     }
 
     @Override
@@ -56,7 +56,7 @@ public class MockUserService implements UserService {
         if (userMap.containsKey(id))
             userMap.remove(id);
         else
-            throw new UserPersistException("");
+            throw new UserPersistException();
     }
 
     @Override
@@ -66,7 +66,7 @@ public class MockUserService implements UserService {
         for (User u: users)
             if (u.getLogin().equals(login))
                 return u;
-        throw new UserPersistException("Пользователя не существует");
+        throw new UserPersistException();
     }
 
     @Override

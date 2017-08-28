@@ -32,7 +32,7 @@ public class UserController {
         user.setPassword(password);
         user.setLogin(logIn);
         UserServices.getService().addUser(user);
-
+        current = user;
         return true;
     }
 
