@@ -144,9 +144,9 @@
 
         <!--User_API-->
         <dependency>
-            <groupId>ru.reeson2003</groupId>
-            <artifactId>user-persist-api</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <groupId>ru.reeson2003.persist_user</groupId>
+            <artifactId>user-persist-impl</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
