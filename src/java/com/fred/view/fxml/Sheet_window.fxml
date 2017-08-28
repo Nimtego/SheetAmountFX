@@ -7,63 +7,83 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rightBarSheetAmount" layoutX="256.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="535.0"
+<AnchorPane fx:id="rightBarSheetAmount" layoutX="257.0" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="535.0"
             style="-fx-background-color: #3D5956;" xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fred.view.MainWindowController">
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fred.view.SheetAmountController">
     <children>
-        <Label fx:id="userName" layoutX="33.0" layoutY="14.0" prefHeight="3.0" prefWidth="305.0" text="Label"
+        <Label fx:id="userName" layoutX="36.0" layoutY="23.0" prefHeight="3.0" prefWidth="305.0" text="Label"
                textFill="#77b6bf"/>
-        <Label fx:id="labelNameDistrict" layoutX="33.0" layoutY="47.0" text="Name district" textFill="#77b6bf"/>
-        <TextField fx:id="textAreaNameDistrict" layoutX="118.0" layoutY="43.0" style="-fx-background-color: #bedfe4;"/>
-        <Label fx:id="labelTrenchSize" layoutX="33.0" layoutY="84.0" text="Trench size" textFill="#77b6bf"/>
-        <ComboBox fx:id="boxTrenchType" layoutX="118.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0"
-                  promptText="Trench type" style="-fx-background-color: #bedfe4;">
+        <Label fx:id="labelNameDistrict" layoutX="35.0" layoutY="68.0" onMouseExited="#mouseReMoved"
+               onMouseMoved="#mouseMoved" text="Name district" textFill="#77b6bf"/>
+        <TextField fx:id="textAreaNameDistrict" layoutX="120.0" layoutY="64.0" onMouseExited="#mouseReMoved"
+                   onMouseMoved="#mouseMoved" prefHeight="0.0" prefWidth="149.0"
+                   style="-fx-background-color: #b2ffe5; -fx-border-radius: 3; -fx-border-color: #bedfe4;"/>
+        <Label fx:id="labelTrenchSize" layoutX="35.0" layoutY="103.0" text="Trench size" textFill="#77b6bf"/>
+        <ComboBox fx:id="boxTrenchType" layoutX="120.0" layoutY="99.0" onMouseExited="#mouseReMoved"
+                  onMouseMoved="#mouseMoved" prefHeight="0.0" prefWidth="149.0" promptText="Trench type"
+                  style="-fx-background-color: #b2ffe5; -fx-border-radius: 3; -fx-border-color: #bedfe4;">
             <cursor>
                 <Cursor fx:constant="DEFAULT"/>
             </cursor>
         </ComboBox>
-        <Label fx:id="labelHeight" layoutX="118.0" layoutY="126.0" text="Height" textFill="#77b6bf"/>
-        <TextField fx:id="textAreaHeight" layoutX="163.0" layoutY="122.0" prefHeight="25.0" prefWidth="104.0"
-                   style="-fx-background-color: #bedfe4;"/>
-        <Label fx:id="labelWidth" layoutX="118.0" layoutY="162.0" text="Width" textFill="#77b6bf"/>
-        <TextField fx:id="textAreaWidth" layoutX="163.0" layoutY="158.0" prefHeight="25.0" prefWidth="104.0"
-                   style="-fx-background-color: #bedfe4;"/>
-        <Label fx:id="labelLineLong" layoutX="34.0" layoutY="204.0" text="Line long" textFill="#77b6bf"/>
-        <TextField fx:id="textAreaNameDistrict1" layoutX="115.0" layoutY="200.0" prefHeight="29.0" prefWidth="149.0"
-                   style="-fx-background-color: #bedfe4;"/>
-        <Label fx:id="labelNameDistrict11" layoutX="33.0" layoutY="226.0" prefHeight="51.0" prefWidth="71.0"
-               text="Quantity of branches" textFill="#77b6bf" wrapText="true"/>
-        <TextField fx:id="textAreaNameDistrict11" layoutX="115.0" layoutY="239.0" prefHeight="29.0" prefWidth="149.0"
-                   style="-fx-background-color: #bedfe4;"/>
-        <Label fx:id="labelNameDistrict111" layoutX="32.0" layoutY="268.0" prefHeight="51.0" prefWidth="71.0"
-               text="Long crossing" textAlignment="JUSTIFY" textFill="#77b6bf" wrapText="true"/>
-        <TextField fx:id="textAreaLongCrossing" layoutX="114.0" layoutY="281.0" prefHeight="29.0" prefWidth="149.0"
-                   style="-fx-background-color: #bedfe4;"/>
-        <Label fx:id="labelTrenchSize1" layoutX="29.0" layoutY="331.0" text="Pipe stock" textFill="#77b6bf"/>
-        <ComboBox fx:id="boxPypeStock" layoutX="114.0" layoutY="327.0" prefHeight="25.0" prefWidth="149.0"
-                  style="-fx-background-color: #bedfe4;">
+        <Label fx:id="labelHeight" layoutX="120.0" layoutY="137.0" text="Height" textFill="#77b6bf"/>
+        <TextField fx:id="textAreaHeight" layoutX="165.0" layoutY="133.0" onMouseExited="#mouseReMoved"
+                   onMouseMoved="#mouseMoved" prefHeight="0.0" prefWidth="104.0"
+                   style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;"/>
+        <Label fx:id="labelWidth" layoutX="120.0" layoutY="166.0" text="Width" textFill="#77b6bf"/>
+        <TextField fx:id="textAreaWidth" layoutX="165.0" layoutY="162.0" onMouseExited="#mouseReMoved"
+                   onMouseMoved="#mouseMoved" prefHeight="0.0" prefWidth="104.0"
+                   style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;"/>
+        <Label fx:id="labelLineLong" layoutX="60.0" layoutY="206.0" text="Line long" textFill="#77b6bf"/>
+        <TextField fx:id="textAreaNameDistrict1" layoutX="121.0" layoutY="200.0" onMouseExited="#mouseReMoved"
+                   onMouseMoved="#mouseMoved" prefHeight="0.0" prefWidth="149.0"
+                   style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;"/>
+        <Label fx:id="labelNameDistrict11" layoutX="59.0" layoutY="241.0" prefHeight="29.0" prefWidth="59.0"
+               text="Branches" textFill="#77b6bf" wrapText="true"/>
+        <TextField fx:id="textAreaNameDistrict11" layoutX="120.0" layoutY="241.0" onMouseExited="#mouseReMoved"
+                   onMouseMoved="#mouseMoved" prefHeight="0.0" prefWidth="33.0"
+                   style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;"/>
+        <Label fx:id="labelNameDistrict111" layoutX="165.0" layoutY="241.0" prefHeight="29.0" prefWidth="50.0"
+               text="Crossing" textAlignment="JUSTIFY" textFill="#77b6bf" wrapText="true"/>
+        <TextField fx:id="textAreaLongCrossing" layoutX="215.0" layoutY="241.0" onMouseExited="#mouseReMoved"
+                   onMouseMoved="#mouseMoved" prefHeight="4.0" prefWidth="53.0"
+                   style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;"/>
+        <Label fx:id="labelTrenchSize1" layoutX="55.0" layoutY="290.0" prefHeight="17.0" prefWidth="59.0"
+               text="Pipe stock" textFill="#77b6bf"/>
+        <ComboBox fx:id="boxPypeStock" layoutX="120.0" layoutY="284.0" onMouseExited="#mouseReMoved"
+                  onMouseMoved="#mouseMoved" prefHeight="0.0" prefWidth="149.0"
+                  style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;">
             <cursor>
                 <Cursor fx:constant="DEFAULT"/>
             </cursor>
         </ComboBox>
-        <Label fx:id="labelTypePipe" layoutX="275.0" layoutY="331.0" text="Pipe stock" textFill="#77b6bf"/>
-        <ComboBox fx:id="boxTypePipe" layoutX="349.0" layoutY="327.0" prefHeight="25.0" prefWidth="149.0"
-                  style="-fx-background-color: #bedfe4;">
+        <Label fx:id="labelTypePipe" layoutX="296.0" layoutY="290.0" text="Type pipe" textFill="#77b6bf"/>
+        <ComboBox fx:id="boxTypePipe" layoutX="357.0" layoutY="284.0" onMouseExited="#mouseReMoved"
+                  onMouseMoved="#mouseMoved" prefHeight="25.0" prefWidth="149.0"
+                  style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;">
             <cursor>
                 <Cursor fx:constant="DEFAULT"/>
             </cursor>
         </ComboBox>
-        <Label fx:id="labelAdditionalOptions" layoutX="316.0" layoutY="23.0" text="Additional options"
+        <Label fx:id="labelAdditionalOptions" layoutX="352.0" layoutY="129.0" text="Additional options"
                textFill="#77b6bf"/>
-        <RadioButton fx:id="button1" layoutX="322.0" layoutY="47.0" mnemonicParsing="false" text="RadioButton"
+        <RadioButton fx:id="button1" layoutX="309.0" layoutY="158.0" mnemonicParsing="false" text="RadioButton"
                      textFill="#77b6bf"/>
-        <RadioButton fx:id="button2" layoutX="322.0" layoutY="97.0" mnemonicParsing="false" text="RadioButton"
+        <RadioButton fx:id="button2" layoutX="309.0" layoutY="192.0" mnemonicParsing="false" text="RadioButton"
                      textFill="#77b6bf"/>
-        <RadioButton fx:id="button3" layoutX="322.0" layoutY="72.0" mnemonicParsing="false" text="RadioButton"
+        <RadioButton fx:id="button3" layoutX="415.0" layoutY="158.0" mnemonicParsing="false" text="RadioButton"
                      textFill="#77b6bf"/>
-        <RadioButton fx:id="button4" layoutX="322.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton"
+        <RadioButton fx:id="button4" layoutX="415.0" layoutY="192.0" mnemonicParsing="false" text="RadioButton"
                      textFill="#77b6bf"/>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0"/>
+        <Label fx:id="labelAllDistrict" layoutX="267.0" layoutY="23.0" text="District" textFill="#77b6bf"/>
+        <ComboBox fx:id="boxTrenchType1" layoutX="352.0" layoutY="19.0" prefHeight="2.0" prefWidth="149.0"
+                  promptText="District"
+                  style="-fx-background-color: #b2ffe5; -fx-border-color: #bedfe4; -fx-border-radius: 3;">
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+        </ComboBox>
     </children>
 </AnchorPane>

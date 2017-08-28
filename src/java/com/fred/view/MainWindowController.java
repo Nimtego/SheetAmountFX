@@ -1,11 +1,13 @@
 package com.fred.view;
 
-import com.fred.service.UserController;
 import com.fred.exception.ErrorMessageException;
+import com.fred.service.UserController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -22,7 +24,6 @@ public class MainWindowController {
     public AnchorPane leftBar;
     public AnchorPane emptyRightPanel;
     public Button logIn;
-    public AnchorPane rightBarSheetAmount;
     public PasswordField fieldPassword;
     public TextField fieldLogIn;
     public Label labelMain;
@@ -31,9 +32,11 @@ public class MainWindowController {
     public Button buttonExit;
     public Button buttonSheetAmount;
     public AnchorPane mainAnchorPane;
+    public AnchorPane sheetAmountBar;
     private MainWindow owner;
     private Color color = Color.SKYBLUE;
     private UserController userController;
+    private String style;
 
     @FXML
     private void initialize() {
@@ -75,10 +78,10 @@ public class MainWindowController {
         if (buttonSheetAmount.isArmed()) {
             if (emptyRightPanel.isVisible()) {
                 emptyRightPanel.setVisible(false);
-                rightBarSheetAmount.setVisible(true);
+                sheetAmountBar.setVisible(true);
             } else {
                 emptyRightPanel.setVisible(true);
-                rightBarSheetAmount.setVisible(false);
+                sheetAmountBar.setVisible(false);
             }
         }
     }
@@ -119,12 +122,20 @@ public class MainWindowController {
             ((Label) mouseEvent.getSource()).setTextFill(Color.SKYBLUE);
         if (mouseEvent.getSource() instanceof TextField||
                 mouseEvent.getSource() instanceof ComboBox) {
+
             if (mouseEvent.getSource() instanceof TextField) {
-                ((TextField) mouseEvent.getSource()).setStyle("-fx-background-color: #b2ffe5;");
+                style = ((TextField) mouseEvent.getSource()).getStyle();
+                TextField textField = (TextField) mouseEvent.getSource();
+                textField.setStyle("-fx-background-color: #20d5f4;");
             }
             else {
-                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-background-color: #b2ffe5;");
+                style = ((ComboBox) mouseEvent.getSource()).getStyle();
+                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-background-color: #20d5f4;");
             }
+        }
+        if (mouseEvent.getSource() instanceof ImageView) {
+            ImageView imageView = (ImageView) mouseEvent.getSource();
+            imageView.setImage(new Image("/WebDev/Buttons/Button_exit_push.png"));
         }
     }
 
@@ -136,12 +147,10 @@ public class MainWindowController {
         if (mouseEvent.getSource() instanceof TextField ||
                 mouseEvent.getSource() instanceof ComboBox) {
             if (mouseEvent.getSource() instanceof TextField) {
-                ((TextField) mouseEvent.getSource()).setStyle("-fx-border-color:    #bedfe4;");
-                ((TextField) mouseEvent.getSource()).setStyle("-fx-background-color:  #3D4956;");
+                ((TextField) mouseEvent.getSource()).setStyle("-fx-background-color: #b2ffe5;");
             }
             else {
-                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-border-color:    #bedfe4;");
-                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-background-color:  #3D4956;");
+                ((ComboBox) mouseEvent.getSource()).setStyle("-fx-background-color: #b2ffe5;");
             }
         }
     }
