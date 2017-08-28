@@ -7,7 +7,4 @@ package ru.reeson2003.persist_user.api;
  * @author Pavel Gavrilov.
  */
 public class UserPersistException extends Exception {
-    public UserPersistException(String message) {
-        super(message);
-    }
 }
